@@ -1,0 +1,23 @@
+[
+    {
+        "Question": "Pick A Genre",
+        "A1": "Hip Hop",
+        "A2": "Country",
+        "A3": "Rock",
+        "A4": "Pop"
+      },
+    {
+        "Question": "Pick A Decade",
+        "A1": "80's",
+        "A2": "90's",
+        "A3": "2000's",
+        "A4": "Present"
+      },
+    {
+        "Question": "Pick A Mood",
+        "A1": "Chill",
+        "A2": "Study",
+        "A3": "Workout",
+        "A4": "Depressed"
+      }
+]
