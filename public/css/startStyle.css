@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    font-family: 'Anton', sans-serif;
+}
+
+.header {
+    
+
+}
+
+h1 {
+    color: #FF9000;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.h1Title {
+  padding-top: 9px;
+  padding-right: 75px;
+
+}
+
+.logo {
+    padding-top: 5px;
+    
+}
+
+.start {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    padding-top: 250px;
+}
+
+button {
+    font-size: 100px;
+    color: black;
+    background-color: #FF9000;
+    font-family: 'Anton', sans-serif;
+}
