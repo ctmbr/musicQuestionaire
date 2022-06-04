@@ -2,30 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dotify</title>
-  <link rel="stylesheet" href="public/css/startStyle.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dotify</title>
+    <link rel="stylesheet" href="public/css/startStyle.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    </style>
 </head>
 
 <body>
     <header>
-        
-        <h1>
-            <div class="logo"> 
+        <section class="header">
+            <div class="logo">
                 <img src="public/images/dotify logo.jpg" width="75" height="75">
             </div>
-            <div class="h1Title">Dotify</div>
-        </h1>
-    </header>    
+            <div class="title">
+                Dotify
+            </div>
+        </section class="header">
+    </header>
 
     <div class="start">
-        <button>Login</button>
-        <button>Sign Up</button>
-    </div>    
+        {{#if loggedIn}}
+        <button class="logut">Logout</button>
+        {{else}}
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+        {{/if}}
+    </div>
 
 
 
