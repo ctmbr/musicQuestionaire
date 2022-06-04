@@ -22,8 +22,53 @@ h1 {
     
 }
 
-.question {
-    width: 50px;
-    height: 50px;
+.question-1 {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    left: 15%;
+    text-align: center;
+    align-items: top;
+    justify-content: center;
+    background-color: black;
+    border-color: #FF9000;
     color: #FF9000;
+    width: 400px;
+    height: 100px;
+    border: solid 5px;
+    font-size: 25px;
+}
+
+.question-2 {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    left: 38%;
+    text-align: center;
+    align-items: top;
+    justify-content: center;
+    background-color: black;
+    border-color: #FF9000;
+    color: #FF9000;
+    width: 400px;
+    height: 100px;
+    border: solid 5px;
+    font-size: 25px;
+}
+
+.question-3 {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    left: 61%;
+    text-align: center;
+    align-items: top;
+    justify-content: center;
+    background-color: black;
+    border-color: #FF9000;
+    color: #FF9000;
+    width: 400px;
+    height: 100px;
+    border: solid 5px;
+    font-size: 25px;
 }
