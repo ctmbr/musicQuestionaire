@@ -7,7 +7,7 @@ class Playlist extends Model {
   }
 }
 
-User.init(
+Playlist.init(
   {
     id: {
       type: DataTypes.INTEGER,
