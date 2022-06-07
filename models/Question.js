@@ -15,23 +15,18 @@ Question.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Question: {
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
+    question: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    A1: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    A2: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    A3: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    A4: {
+    answers: {
       type: DataTypes.STRING,
       allowNull: false,
     },

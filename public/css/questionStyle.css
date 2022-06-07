@@ -1,0 +1,107 @@
+body {
+    background-color: black;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+h1 {
+    color: #FF9000;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.title {
+    padding-top: 9px;
+    padding-right: 75px;
+    letter-spacing: .075rem;
+
+
+}
+
+.login {
+    margin-left: 75%;
+    justify-content: flex-end;
+}
+
+.loginBtn {
+    color: black;
+    padding: 16px 40px;
+    border-radius: .95rem;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    background-size: 152% 100%;
+    background: #FF9000;
+    border: 2px solid #FF9000;
+    width: 115px;
+    justify-content: space-around;
+}
+
+.loginBtn:hover {
+    background: black;
+    border-color: #FF9000;
+    color: #FF9000;
+}
+
+.logo {
+    padding-top: 5px;
+
+}
+
+.question-conatainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.question {
+    display: flex;
+    margin: 10;
+    margin-bottom: 5;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF9000;
+    text-transform: uppercase;
+    letter-spacing: .075rem;
+    color: black;
+    width: 400px;
+    height: 100px;
+    border-radius: .45rem;
+    font-size: 35px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FF9000;
+    border-bottom-right-radius: .95rem;
+    border-bottom-left-radius: .95rem;
+    color: #FF9000;
+    list-style: none;
+    height: 225px;
+    width: 175px;
+
+}
+
+.choices li {
+    background-color: black;
+    border-radius: .95rem;
+    height: 40px;
+    width: 125px;
+    margin: 5px;
+
+}
+
+.choices li:hover {
+    height: 50px;
+    width: 145px;
+    margin-top: 5%;
+    font-size: 30px;
+    transition: 0.3s;
+}
