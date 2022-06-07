@@ -38,10 +38,18 @@
     <main>
       <!-- Conditionally render login or logout links -->
       {{#if logged_in}}
-        {{! Show questions.handlebars }}
+        <div class='login'>
+
+          <p class='loginBtn'>Logout</p>
+        </div>
       {{else}}
+        <div class='login'>
+          <p class='loginBtn'>Sign up</p>
+          <p class='loginBtn'>Login</p>
+        </div>
         {{! Show login.handlebars  }}
       {{/if}}
+
       {{{body}}}
     </main>
 
