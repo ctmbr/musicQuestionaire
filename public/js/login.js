@@ -3,8 +3,8 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // TODO: Add a comment describing the functionality of these expressions
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const email = document.querySelector('#typeEmailX-login').value.trim(); // Adds Email entered in login.handlebars
+  const password = document.querySelector('#typePasswordX-login').value.trim(); // Adds Email entered in login.handlebars
 
   if (email && password) {
     console.log('post /api/users/login');
@@ -28,9 +28,9 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const username = document.querySelector('#typeUsernameX-singup').value.trim();
+  const email = document.querySelector('#typeEmailX-singup').value.trim();
+  const password = document.querySelector('#typePasswordX-singup').value.trim();
 
   if (username && email && password) {
     console.log(username, email, password);

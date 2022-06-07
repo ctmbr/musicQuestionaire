@@ -11,17 +11,17 @@ router.get('/', withAuth, async (req, res) => {
       question.get({ plain: true })
     );
 
-    res.render('questions', {
+    res.render('login', {
       questions,
       // Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/login', async (req, res) => {
+router.get('/login', withAuth, async (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -31,15 +31,15 @@ router.get('/login', async (req, res) => {
   res.render('login');
 });
 
+// Redirects user to questions page if they are logged in
 router.get('/dashboard', async (req, res) => {
-  console.log('homepage root route');
-  const blogData = await Blog.findAll().catch((err) => {
+  const questionData = await Question.findAll().catch((err) => {
     console.log('is logged in: ', req.session.loggedIn);
     if (err) res.json(err);
   });
-  const blogs = blogData.map((blog) => blog.get({ plain: true }));
-  res.render('blog', {
-    blogs,
+  const questions = questionData.map((question) => question.get({ plain: true }));
+  res.render('question', {
+    questions,
     username: req.session.username,
     loggedIn: req.session.loggedIn,
   });
