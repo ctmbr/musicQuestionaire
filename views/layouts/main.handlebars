@@ -1,14 +1,6 @@
 <html lang='en'>
 
   <head>
-    {{! CSS LINKS START HERE }}
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Fund My Project!</title>
-    <link rel='stylesheet' href='/css/jass.css' />
-    <link rel='stylesheet' href='/css/style.css' />
-    {{! CSS LINKS END HERE }}
-
     <!-- MDB LINKS START HERE-->
     <title>Material Design for Bootstrap</title>
     <!-- MDB icon -->
@@ -23,11 +15,24 @@
       rel='stylesheet'
       href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap'
     />
+    <link
+      href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css'
+      rel='stylesheet'
+    />
     <!-- MDB -->
     <link rel='stylesheet' href='css/mdb.min.css' />
-    <link rel='stylesheet' href='login.css' />
+    <link rel='stylesheet' href='../../MDB/login.css' />
     <!-- MDB LINKS END HERE-->
 
+    {{! CSS LINKS START HERE }}
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Fund My Project!</title>
+    <link rel='stylesheet' href='/css/jass.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    {{! CSS LINKS END HERE }}
+
+  
   </head>
   <body>
     <main>
@@ -44,6 +49,11 @@
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
     {{/if}}
+    <script type='text/javascript' src='js/mdb.min.js'></script>
+    <!-- Custom scripts -->
+    <script type='text/javascript'></script>
+    <!-- path to login.js For Project -->
+    <script src='/js/login.js'></script>
   </body>
 
 </html>
