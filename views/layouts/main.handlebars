@@ -26,17 +26,30 @@
     <!-- MDB -->
     <link rel='stylesheet' href='css/mdb.min.css' />
     <link rel='stylesheet' href='login.css' />
+
     <!-- MDB LINKS END HERE-->
+
+    {{! Custom style }}
+
+    <link rel='stylesheet' href='../../public/css/questionStyle.css' />
 
   </head>
   <body>
     <main>
       <!-- Conditionally render login or logout links -->
       {{#if logged_in}}
-        {{! Show questions.handlebars }}
+        <div class='login'>
+
+          <p class='loginBtn'>Logout</p>
+        </div>
       {{else}}
+        <div class='login'>
+          <p class='loginBtn'>Sign up</p>
+          <p class='loginBtn'>Login</p>
+        </div>
         {{! Show login.handlebars  }}
       {{/if}}
+
       {{{body}}}
     </main>
 
