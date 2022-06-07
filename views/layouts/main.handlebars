@@ -32,11 +32,11 @@
   <body>
     <main>
       <!-- Conditionally render login or logout links -->
-    {{#if logged_in}}
-      {{! Show questions.handlebars }}
-    {{else}}
-      {{! Show login.handlebars  }}
-    {{/if}}
+      {{#if logged_in}}
+        {{! Show questions.handlebars }}
+      {{else}}
+        {{! Show login.handlebars  }}
+      {{/if}}
       {{{body}}}
     </main>
 
