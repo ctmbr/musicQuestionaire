@@ -35,6 +35,19 @@ User.init(
         len: [8],
       },
     },
+    // data collected form users in questions.js in config
+    genre: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    decade: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    mood: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     hooks: {

@@ -1,19 +1,26 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Randomsong extends Model {
+class Playlist extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-User.init(
+Playlist.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     title: {
       type: DataTypes.STRING,
@@ -25,8 +32,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'randomsong',
+    modelName: 'playllist',
   }
 );
 
-module.exports = Randomsong;
+module.exports = Playlist;
