@@ -29,6 +29,9 @@ Question.init(
     answers: {
       type: DataTypes.STRING,
       allowNull: false,
+      // validate: {
+      //   isIn: [['Hip Hop', 'Country', 'Rock', 'Pop']]
+      // }
     },
   },
   {
