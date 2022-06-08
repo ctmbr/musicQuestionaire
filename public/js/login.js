@@ -1,4 +1,5 @@
 const loginFormHandler = async (event) => {
+  console.log("test")
   // TODO: Add a comment describing the functionality of this statement
   event.preventDefault();
 
@@ -16,7 +17,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/questions');
     } else {
       let tempRes = JSON.parse(response.body);
       console.log(tempRes);
@@ -41,7 +42,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/questions');
     } else {
       alert('Failed to sign up.');
     }
