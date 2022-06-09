@@ -73,15 +73,14 @@ router.get('/questions/:id', async (req, res) => {
 router.get('/questions', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Question }],
+    const questionData = await Question.findAll({ 
     });
-
-    const user = userData.get({ plain: true });
-    // Render Pofile page in handlebars
+    
+    const questions = questionData.get({ plain: true }); //making an error
+    // Render questions page in handlebars
+    console.log(questions)
     res.render('questions', {
-      ...user,
+      questions,
       logged_in: true
     });
   } catch (err) {
