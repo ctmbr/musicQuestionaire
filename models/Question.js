@@ -15,13 +15,13 @@ Question.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
     question: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -29,9 +29,30 @@ Question.init(
     answers: {
       type: DataTypes.STRING,
       allowNull: false,
+      // validate: {
+      //   isIn: [['Hip Hop', 'Country', 'Rock', 'Pop']]
+      // }
     },
   },
   {
+    hooks: {
+      beforeValidate: async (newQuestionData) => {
+        newQuestionData.answers = JSON.stringify(newQuestionData.answers);
+        return newQuestionData;
+      },
+      beforeUpdate: async (updatedQuestionData) => {
+        updatedQuestionData.answers = JSON.stringify(updatedQuestionData.answers);
+        return updatedQuestionData;
+      },
+      afterFind: async (foundQuestionData) => {
+        console.log(foundQuestionData)
+        foundQuestionData = foundQuestionData.map(item => {
+          item.answers = JSON.parse(item.answers);
+          return item;
+        });
+        return foundQuestionData;
+      }
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

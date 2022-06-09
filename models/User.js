@@ -44,10 +44,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    mood: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
   },
   {
     hooks: {
