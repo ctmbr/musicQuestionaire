@@ -1,5 +1,9 @@
-{{#each questions as |question| }}
-{{!-- Styling for questions here --}}
-<p>{question.question}</p>
+{{#each questions as |question|}}
+  {{! Styling for questions here }}
+  <section class='question-conatainer'>
+    <h2 class='question'>{{question.question}}</h2>
+    <div class='choices'>
+      <li>{{question.answers}}</li>
+    </div>
+  </section>
 {{/each}}
-<div>example</div>
