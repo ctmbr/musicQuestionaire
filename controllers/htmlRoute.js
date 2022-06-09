@@ -70,7 +70,7 @@ router.get('/questions/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Get route for questions page after loggin in
 router.get('/questions', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -91,6 +91,7 @@ router.get('/questions', withAuth, async (req, res) => {
   }
 });
 
+//login route that verifies if the user successfully logged in
 router.get('/login', withAuth, async (req, res) => {
   // If the user is already logged in, redirect to the questions page
   if (req.session.loggedIn) {
@@ -104,3 +105,23 @@ router.get('/login', withAuth, async (req, res) => {
 module.exports = router;
 
 
+// Route that takes user to playlist page
+router.get('/playlists', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const questionData = await Question.findAll({ 
+    });
+    console.log(questionData)
+    // const questions = await questionData({ plain: true }); //making an error
+    const questions = questionData.map((question) => question.get({ plain: true }));
+    // Render questions page in handlebars
+    console.log(questions)
+    res.render('playlist', {
+      questions,
+      logged_in: true
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
