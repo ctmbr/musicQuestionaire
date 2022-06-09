@@ -42,6 +42,7 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -61,7 +62,7 @@ router.get('/questions/:id', async (req, res) => {
     const question = questionData.get({ plain: true });
 
     res.render('questions', {
-      ...question,
+      question,
       logged_in: req.session.logged_in
     });
   } catch (err) {
