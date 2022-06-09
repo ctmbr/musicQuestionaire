@@ -3,7 +3,9 @@
   <section class='question-conatainer'>
     <h2 class='question'>{{question.question}}</h2>
     <div class='choices'>
-      <li>{{question.answers}}</li>
+      {{#each question.answers}}
+      <li>{{this}}</li>
+      {{/each}}
     </div>
   </section>
 {{/each}}
