@@ -4,8 +4,9 @@
     <h2 class='question'>{{question.question}}</h2>
     <div class='choices'>
       {{#each question.answers}}
-      <li>{{this}}</li>
+      <li class="choices">{{this}}</li>
       {{/each}}
     </div>
   </section>
 {{/each}}
+<button class="submit-choices">Submit</button>
