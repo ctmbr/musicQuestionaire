@@ -75,8 +75,9 @@ router.get('/questions', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const questionData = await Question.findAll({ 
     });
-    
-    const questions = questionData.get({ plain: true }); //making an error
+    console.log(questionData)
+    // const questions = await questionData({ plain: true }); //making an error
+    const questions = questionData.map((question) => question.get({ plain: true }));
     // Render questions page in handlebars
     console.log(questions)
     res.render('questions', {
@@ -84,6 +85,7 @@ router.get('/questions', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -99,3 +101,5 @@ router.get('/login', withAuth, async (req, res) => {
 });
 
 module.exports = router;
+
+
