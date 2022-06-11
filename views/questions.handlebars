@@ -4,9 +4,9 @@
     <h2 class='question'>{{question.question}}</h2>
     <div class='choices'>
       {{#each question.answers}}
-      <li class="choices">{{this}}</li>
+        <button class='choices'>{{this}}</button>
       {{/each}}
     </div>
   </section>
 {{/each}}
-<button class="submit-choices">Submit</button>
+<button class='loginBtn submit-choices'>Submit</button>

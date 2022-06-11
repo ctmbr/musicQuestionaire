@@ -120,19 +120,28 @@ button {
 
 }
 
-.choices li {
+.choices button {
     background-color: black;
     border-radius: .95rem;
     height: 40px;
     width: 125px;
     margin: 5px;
+    margin-bottom: 5%;
 
 }
 
-.choices li:hover {
+.choices button:hover {
     height: 50px;
     width: 145px;
     margin-top: 5%;
     font-size: 30px;
     transition: 0.3s;
+}
+
+.choices button:focus {
+    height: 50px;
+    width: 145px;
+    margin-top: 5%;
+    font-size: 30px;
+    letter-spacing: .075rem
 }
