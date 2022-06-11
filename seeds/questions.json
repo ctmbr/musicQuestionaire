@@ -1,52 +1,10 @@
 [
   {
     "question": "Pick A Genre",
-    "answers": "Hip Hop"
-  },
-  {
-    "question": "Pick A Genre",
-    "answers": "Country"
-  },
-  {
-    "question": "Pick A Genre",
-    "answers": "Rock"
-  },
-  {
-    "question": "Pick A Genre",
-    "answers": "Pop"
-  },
-
-  {
-    "question": "Pick A Decade",
-    "answers": "80's"
+    "answers": ["Hip Hop","Country","Rock","Pop"]
   },
   {
     "question": "Pick A Decade",
-    "answers": "90's"
-  },
-  {
-    "question": "Pick A Decade",
-    "answers": "2000's"
-  },
-  {
-    "question": "Pick A Decade",
-    "answers": "Presents"
-  },
-
-  {
-    "question": "Pick A Mood",
-    "answers": "Chill"
-  },
-  {
-    "question": "Pick A Mood",
-    "answers": "study"
-  },
-  {
-    "question": "Pick A Mood",
-    "answers": "workout"
-  },
-  {
-    "question": "Pick A Mood",
-    "answers": "Depressed"
+    "answers": ["80's","90's","2000's","Present"]
   }
 ]

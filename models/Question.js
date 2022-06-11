@@ -35,6 +35,24 @@ Question.init(
     },
   },
   {
+    hooks: {
+      beforeValidate: async (newQuestionData) => {
+        newQuestionData.answers = JSON.stringify(newQuestionData.answers);
+        return newQuestionData;
+      },
+      beforeUpdate: async (updatedQuestionData) => {
+        updatedQuestionData.answers = JSON.stringify(updatedQuestionData.answers);
+        return updatedQuestionData;
+      },
+      afterFind: async (foundQuestionData) => {
+        console.log(foundQuestionData)
+        foundQuestionData = foundQuestionData.map(item => {
+          item.answers = JSON.parse(item.answers);
+          return item;
+        });
+        return foundQuestionData;
+      }
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

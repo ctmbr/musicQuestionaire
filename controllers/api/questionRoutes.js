@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 const { Question } = require('../../models/');
 const withAuth = require('../../utils/auth')
 
@@ -18,5 +20,8 @@ router.post('/', withAuth, async (req, res) => { // Post data entered by user in
     res.status(400).json(err);
   }
 });
+
+
+// Create post method to fufill question.js fet request in Public folder
 
 module.exports = router;
