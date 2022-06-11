@@ -44,9 +44,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const genreFormHandler = async (event) => {
-  console.log('test');
-};
 
 document
   .querySelector('.submit-choices')
