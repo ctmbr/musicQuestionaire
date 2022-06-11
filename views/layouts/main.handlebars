@@ -1,77 +1,8 @@
-{{!-- <html lang='en'>
-
-  <head>
-    <!-- MDB LINKS START HERE-->
-    <title>Material Design for Bootstrap</title>
-    <!-- MDB icon -->
-    <link rel='icon' href='img/mdb-favicon.ico' type='image/x-icon' />
-    <!-- Font Awesome -->
-    <link
-      rel='stylesheet'
-      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel='stylesheet'
-      href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap'
-    />
-    <link
-      href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css'
-      rel='stylesheet'
-    />
-    <!-- MDB -->
-    <link rel='stylesheet' href='/MDB/css/mdb.min.css' />
-    <link rel='stylesheet' href='../../MDB/login.css' />
-    <!-- MDB LINKS END HERE-->
-
-    {{! CSS LINKS START HERE }}
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Fund My Project!</title>
-    <link rel='stylesheet' href='/css/jass.css' />
-    <link rel='stylesheet' href='/css/style.css' />
-    {{! CSS LINKS END HERE }}
-
-  
-  </head>
-  <body>
-    <main>
-      <!-- Conditionally render login or logout links -->
-      {{#if logged_in}}
-        <div class='login'>
-
-          <p class='loginBtn'>Logout</p>
-        </div>
-      {{else}}
-        <div class='login'>
-          <p class='loginBtn'>Sign up</p>
-          <p class='loginBtn'>Login</p>
-        </div>
-        {{! Show login.handlebars  }}
-      {{/if}}
-
-      {{{body}}}
-    </main>
-
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src='/js/logout.js'></script>
-    {{/if}}
-    <script type='text/javascript' src='/MDB/js/mdb.min.js'></script>
-    <!-- Custom scripts -->
-    <script type='text/javascript'></script>
-    <!-- path to login.js For Project -->
-    <script src='/js/login.js'></script>
-  </body>
-
-</html> --}}
-
-{{!-- Charles Main Handlebars --}}
 <html lang='en'>
 
   <head>
     <!-- MDB LINKS START HERE-->
-    <title>Material Design for Bootstrap</title>
+    <title>Dotify</title>
     <!-- MDB icon -->
     <link rel='icon' href='img/mdb-favicon.ico' type='image/x-icon' />
     <!-- Font Awesome -->
@@ -111,10 +42,10 @@
         <h1>
           <div class='logo'>
             <img
-              src='../../public/images/dotify logo.jpg'
+              src='./images/logo.jpg'
               width='75'
               height='75'
-            />
+            >
           </div>
           <div class='title'>Dotify</div>
         </h1>
