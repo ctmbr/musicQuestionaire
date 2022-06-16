@@ -112,48 +112,57 @@ button {
     text-transform: uppercase;
     letter-spacing: .075rem;
     color: black;
-    width: 400px;
+    width: 600px;
     height: 100px;
-    border-radius: .45rem;
+    border-top-left-radius: .45rem;
+    border-top-right-radius: .45rem;
     font-size: 35px;
 }
 
-.choices {
+  /* Radio Button Stuff */
+
+  .choices {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     background-color: #FF9000;
     border-bottom-right-radius: .95rem;
     border-bottom-left-radius: .95rem;
     color: #000000;
     list-style: none;
-    width: 350px;
+    width: 600px;
 
 }
 
-.choices button {
-    background-color: black;
-    border-radius: .95rem;
-    height: 40px;
-    width: 125px;
-    margin: 5px;
-    margin-bottom: 5%;
+  .choices input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .choices label {
+    display: inline-block;
+    background-color: #000000;
+    color: #FF9000;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid rgb(0, 0, 0);
+    border-bottom-left-radius: .95rem;
+    width: 550px;
+  }
+  .choices label:hover {
+    background-color: #FF9000;
+    color: #000000;
+    border-right: none;
+  }
+  .choices input[type="radio"]:focus + label {
+    border: 2px solid rgb(0, 0, 0);
+  }
+  .choices input[type="radio"]:checked + label {
+    background-color: #FF9000;
+    color: #000000;
+    border-color: rgb(0, 0, 0);
+    border-right: none;
+  }
 
-}
-
-.choices button:hover {
-    height: 50px;
-    width: 145px;
-    margin-top: 5%;
-    font-size: 30px;
-    transition: 0.3s;
-}
-
-.choices button:focus {
-    height: 50px;
-    width: 145px;
-    margin-top: 5%;
-    font-size: 30px;
-    letter-spacing: .075rem
-}
+  /* Radio Button Stuff */
