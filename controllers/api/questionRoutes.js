@@ -25,19 +25,22 @@ router.post('/', withAuth, async (req, res) => { // Post data entered by user in
 // Create post method to fufill question.js fet request in Public folder
 router.post('/choices', async (req, res) => {
   console.log('choices route was hit')
+  console.log(req.body)
   try {
     // Find the user who matches the posted e-mail address
     const questionData = await Question.findOne({ where: { 
-      genreAnswer: req.body.genreAnswer,
-      decadeAnswer: req.body.decadeAnswer,
+      answers: req.body.genreAnswer
     } });
-
-    if (!questionData) {
-      res
-        .status(400)
-        .json({ message: 'Please choose a genre and decade' });
-      return;
-    }
+    const questionData2 = await Question.findOne({ where: { 
+      answers: req.body.decadeAnswer
+    } });
+    console.log(37,questionData,questionData2)
+    // if (!questionData) {
+    //   res
+    //     .status(400)
+    //     .json({ message: 'Please choose a genre and decade' });
+    //   return;
+    // }
 
     // Create session variables based on the logged in user
     req.session.loggedIn = true;
@@ -46,10 +49,11 @@ router.post('/choices', async (req, res) => {
     req.session.email = userData.email;
     req.session.save(() => {
       console.log(req.session)
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.json({ question: questionData});
     });
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
