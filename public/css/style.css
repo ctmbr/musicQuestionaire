@@ -149,11 +149,15 @@ button {
     border: 2px solid rgb(0, 0, 0);
     border-bottom-left-radius: .95rem;
     width: 550px;
+    transition: font-size .3s;
+    transition: width .3s;
   }
   .choices label:hover {
     background-color: #FF9000;
     color: #000000;
     border-right: none;
+    font-size: 24px;
+    width: 575px;
   }
   .choices input[type="radio"]:focus + label {
     border: 2px solid rgb(0, 0, 0);
@@ -163,6 +167,8 @@ button {
     color: #000000;
     border-color: rgb(0, 0, 0);
     border-right: none;
+    font-size: 24px;
+    width: 575px;
   }
 
   /* Radio Button Stuff */
