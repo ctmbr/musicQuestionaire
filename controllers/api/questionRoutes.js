@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const req = require('express/lib/request');
 const res = require('express/lib/response');
-const { Question } = require('../../models/');
+const { Question, Song } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 // Post Questions And Responses Available To User
@@ -28,11 +28,8 @@ router.post('/choices', async (req, res) => {
   console.log(req.body)
   try {
     // Find the user who matches the posted e-mail address
-    const questionData = await Question.findOne({ where: { 
-      answers: req.body.genreAnswer
-    } });
-    const questionData2 = await Question.findOne({ where: { 
-      answers: req.body.decadeAnswer
+    const questionData = await Song.findOne({ where: { 
+      answers: req.body.genreAnswer & req.body.decadeAnswer 
     } });
     console.log(37,questionData,questionData2)
     // if (!questionData) {

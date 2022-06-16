@@ -65,6 +65,19 @@ h1 {
     justify-content: space-around;
 }
 
+.submit-choices {
+    color: black;
+    margin-top: 20px;
+    border-radius: .95rem;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    background-size: 152% 100%;
+    background: #FF9000;
+    border: 2px solid #FF9000;
+    width: 115px;
+    justify-content: space-around;
+}
+
 button {
     padding: 5px 4px;
     font-family: 'Anton', sans-serif;
@@ -113,10 +126,9 @@ button {
     background-color: #FF9000;
     border-bottom-right-radius: .95rem;
     border-bottom-left-radius: .95rem;
-    color: #FF9000;
+    color: #000000;
     list-style: none;
-    height: 225px;
-    width: 175px;
+    width: 350px;
 
 }
 

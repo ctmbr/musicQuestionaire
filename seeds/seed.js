@@ -20,6 +20,9 @@ const seedDatabase = async () => {
     });
   }
 
+  const songs = await Song.bulkCreate(songData, {
+    returning: true
+  })
   process.exit(0);
 };
 

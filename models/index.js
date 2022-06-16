@@ -18,7 +18,7 @@ User.hasMany(Playlist, {
 });
 
 Playlist.hasMany(Song, {
-  foreignKey: 'user_id'
+  foreignKey: 'song_id',
 });
 
 module.exports = { User, Question, Playlist, Song};
