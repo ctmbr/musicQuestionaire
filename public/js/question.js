@@ -3,21 +3,22 @@ const userChoiceHandler = async (event) => {
   event.preventDefault();
 
   // Genre
-  const genreAnswer = document.querySelector('input[type="radio"][name="question-1"]:checked').value.trim();
+  const genre = document.querySelector('input[type="radio"][name="question-1"]:checked').value.trim();
   // Decade
-  const decadeAnswer = document.querySelector('input[type="radio"][name="question-2"]:checked').value.trim();
+  const decade = document.querySelector('input[type="radio"][name="question-2"]:checked').value.trim();
 
-  if (genreAnswer && decadeAnswer) {
-    console.log(genreAnswer);
-    console.log(decadeAnswer);
+  if (genre && decade) {
+    console.log(genre);
+    console.log(decade);
     const response = await fetch(`/api/questions/choices`, {
       method: 'POST',
-      body: JSON.stringify({ genreAnswer, decadeAnswer }),
+      body: JSON.stringify({ genre, decade }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
     console.log(response);
+    console.log('test')
     if (response.ok) {
       document.location.replace('/playlists'); //triggers playlist endpoin in htmlroutez
     } else {
