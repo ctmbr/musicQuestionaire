@@ -51,8 +51,8 @@ const signupFormHandler = async (event) => {
 
 document // Event Listeners when clicking submit buttons on login.handblebars
   .querySelector('.login-form')
-  .addEventListener('click', loginFormHandler);
+  ?.addEventListener('click', loginFormHandler);
 
 document
   .querySelector('.signup-form')
-  .addEventListener('click', signupFormHandler);
+  ?.addEventListener('click', signupFormHandler);

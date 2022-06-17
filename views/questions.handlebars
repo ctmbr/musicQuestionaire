@@ -1,12 +1,16 @@
 {{#each questions as |question|}}
   {{! Styling for questions here }}
-  <section class='question-conatainer'>
-    <h2 class='question'>{{question.question}}</h2>
-    <div class='choices'>
-      {{#each question.answers}}
-        <button class='choices'>{{this}}</button>
-      {{/each}}
-    </div>
-  </section>
-{{/each}}
-<button class='loginBtn submit-choices'>Submit</button>
+  <form name="questionForm">
+      <section class='question-conatainer'>
+        <h2 class='question'>{{question.question}}</h2>
+        <div class='choices'>
+          {{#each question.answers}}
+            <input type="radio" id="question-{{question.id}}-{{@index}}" name="question-{{question.id}}" value="{{this}}">
+            <label for="question-{{question.id}}-{{@index}}">{{this}}</label><br>
+          {{/each}}
+        </div>
+      </section>
+    {{/each}}
+    <button class='submit-choices' type="submit">Submit</button>
+  </form>
+<script src="/js/question.js"></script>

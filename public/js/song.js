@@ -1,5 +1,8 @@
 
-
+var image = document.getElementsByClassName('thumbnail');
+new simpleParallax(image, {
+	orientation: 'right'
+});
 
 if (answers ="Hip Hop" && (answers="80's")) {
     document.getElementById("song-gen");

@@ -3,11 +3,9 @@ const userChoiceHandler = async (event) => {
   event.preventDefault();
 
   // Genre
-  const genreQuestion = document.querySelector('question').value.trim(); //don't know if I need these
-  const genreAnswer = document.querySelector('.choices').value.trim();
+  const genreAnswer = document.querySelector('input[type="radio"][name="question-1"]:checked').value.trim();
   // Decade
-  const decadeQuestion = document.querySelector('question').value.trim(); //don't know if I need these
-  const decadeAnswer = document.querySelector('.choices').value.trim();
+  const decadeAnswer = document.querySelector('input[type="radio"][name="question-2"]:checked').value.trim();
 
   if (genreAnswer && decadeAnswer) {
     console.log(genreAnswer);
@@ -19,9 +17,9 @@ const userChoiceHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
-
+    console.log(response);
     if (response.ok) {
-      document.location.replace('/playlists');
+      document.location.replace('/playlists'); //triggers playlist endpoin in htmlroutez
     } else {
       alert('Failed to use option');
     }
@@ -44,13 +42,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const genreFormHandler = async (event) => {
-  console.log('test');
-};
 
 document
-  .querySelector('.submit-choices')
-  .addEventListener('click', userChoiceHandler);
+  .querySelector('form[name="questionForm"]')
+  .addEventListener('submit', userChoiceHandler);
 
 document
   .querySelector('.project-list')

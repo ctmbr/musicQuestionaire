@@ -1,6 +1,7 @@
 const User = require('./User');
 const Question = require('./Question');
 const Playlist = require('./playlist')
+const Song = require('./songs')
 // Users Updated answers to each question
 User.hasOne(Question, {
   foreignKey: 'user_id',
@@ -16,4 +17,8 @@ User.hasMany(Playlist, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Question, Playlist};
+Playlist.hasMany(Song, {
+  foreignKey: 'song_id',
+});
+
+module.exports = { User, Question, Playlist, Song};
