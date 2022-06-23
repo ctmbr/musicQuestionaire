@@ -1,13 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Playlist extends Model {
+class Song extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-Playlist.init(
+Song.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -26,11 +26,15 @@ Playlist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    genreAnswer: {
+    artist: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    decadeAnswer: {
+    genre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    decade: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -44,8 +48,8 @@ Playlist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'playlist',
+    modelName: 'song',
   }
 );
 
-module.exports = Playlist;
+module.exports = Song;

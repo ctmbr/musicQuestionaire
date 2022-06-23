@@ -3,25 +3,24 @@ const userChoiceHandler = async (event) => {
   event.preventDefault();
 
   // Genre
-  const genreQuestion = document.querySelector('question').value.trim(); //don't know if I need these
-  const genreAnswer = document.querySelector('.choices').value.trim();
+  const genre = document.querySelector('input[type="radio"][name="question-1"]:checked').value.trim();
   // Decade
-  const decadeQuestion = document.querySelector('question').value.trim(); //don't know if I need these
-  const decadeAnswer = document.querySelector('.choices').value.trim();
+  const decade = document.querySelector('input[type="radio"][name="question-2"]:checked').value.trim();
 
-  if (genreAnswer && decadeAnswer) {
-    console.log(genreAnswer);
-    console.log(decadeAnswer);
+  if (genre && decade) {
+    console.log(genre);
+    console.log(decade);
     const response = await fetch(`/api/questions/choices`, {
       method: 'POST',
-      body: JSON.stringify({ genreAnswer, decadeAnswer }),
+      body: JSON.stringify({ genre, decade }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+    console.log(response);
+    console.log('test')
     if (response.ok) {
-      document.location.replace('/playlists');
+      document.location.replace(`/playlists/${genre}/${decade}`); //triggers playlist endpoin in htmlroutez
     } else {
       alert('Failed to use option');
     }
@@ -46,8 +45,8 @@ const delButtonHandler = async (event) => {
 
 
 document
-  .querySelector('.submit-choices')
-  .addEventListener('click', userChoiceHandler);
+  .querySelector('form[name="questionForm"]')
+  .addEventListener('submit', userChoiceHandler);
 
 document
   .querySelector('.project-list')

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Question, User } = require('../models');
+const { Question, User, Playlist, Song } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Prevent non logged in users from viewing the homepage
@@ -105,19 +105,20 @@ router.get('/login', withAuth, async (req, res) => {
 module.exports = router;
 
 
-// Route that takes user to playlist page
-router.get('/playlists', withAuth, async (req, res) => {
+// Route that takes user to playlist page based on responses from user in question.js
+router.get('/playlists/:genre/:decade', async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const questionData = await Question.findAll({ 
-    });
-    console.log(questionData)
+    const songData = await Song.findOne({ where: { 
+      genre: req.params.genre, 
+      decade: req.params.decade,
+    } });
+    console.log(songData)
     // const questions = await questionData({ plain: true }); //making an error
-    const questions = questionData.map((question) => question.get({ plain: true }));
+    const songs = songData.get({ plain: true });
     // Render questions page in handlebars
-    console.log(questions)
-    res.render('playlist', {
-      questions,
+    console.log(songs)
+    res.render('playlists', {
+      songs,
       logged_in: true
     });
   } catch (err) {
