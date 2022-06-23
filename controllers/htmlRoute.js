@@ -106,7 +106,7 @@ module.exports = router;
 
 
 // Route that takes user to playlist page based on responses from user in question.js
-router.get('/playlists/:genre/:decade', withAuth, async (req, res) => {
+router.get('/playlists/:genre/:decade', async (req, res) => {
   try {
     const songData = await Song.findOne({ where: { 
       genre: req.params.genre, 
