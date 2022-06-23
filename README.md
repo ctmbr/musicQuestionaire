@@ -41,4 +41,4 @@ Instead of using the front end you developed for your first project, you should 
 
 
 # Deployed Heroku APp
-https://lit-oasis-59669.herokuapp.com/
+https://git.heroku.com/lit-oasis-project-2.git
