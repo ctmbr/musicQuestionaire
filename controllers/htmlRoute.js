@@ -106,18 +106,18 @@ module.exports = router;
 
 
 // Route that takes user to playlist page based on responses from user in question.js
-router.get('/playlists', withAuth, async (req, res) => {
+router.get('/playlists/:genre/:decade', withAuth, async (req, res) => {
   try {
-    const songData = await Song.findByPk({ where: { 
-      genre: req.body.genre, 
-      decade: req.body.decade,
+    const songData = await Song.findOne({ where: { 
+      genre: req.params.genre, 
+      decade: req.params.decade,
     } });
     console.log(songData)
     // const questions = await questionData({ plain: true }); //making an error
-    const songs = songData.map((song) => song.get({ plain: true }));
+    const songs = songData.get({ plain: true });
     // Render questions page in handlebars
     console.log(songs)
-    res.render('playlist', {
+    res.render('playlists', {
       songs,
       logged_in: true
     });

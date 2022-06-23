@@ -39,16 +39,14 @@ router.post('/choices', async (req, res) => {
         .json({ message: 'Please choose a genre and decade' });
       return;
     }
-    // Create session variables based on the logged in user
-    req.session.loggedIn = true;
-    // req.session.user_id = userData.id;
-    // req.session.username = userData.username;
-    // req.session.email = userData.email;
-    // req.session.save(() => {
-    //   console.log(req.session)
-    //   res.json({ question: questionData});
-    // });
-
+  console.log(songData)
+    const songs = songData.get({ plain: true });
+    // Render questions page in handlebars
+    console.log(songs)
+    res.render('playlists', {
+      songs,
+      logged_in: true
+    });
   } catch (err) {
     console.log(err)
     res.status(400).json(err);
