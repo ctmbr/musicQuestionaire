@@ -20,7 +20,7 @@ const userChoiceHandler = async (event) => {
     console.log(response);
     console.log('test')
     if (response.ok) {
-      document.location.replace('/playlists'); //triggers playlist endpoin in htmlroutez
+      document.location.replace(`/playlists/${genre}/${decade}`); //triggers playlist endpoin in htmlroutez
     } else {
       alert('Failed to use option');
     }
